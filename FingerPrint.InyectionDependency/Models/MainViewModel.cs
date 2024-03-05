@@ -45,10 +45,11 @@ namespace FingerPrint.InyectionDependency.Models
                     Task.Run(async () =>
                     {
                         await Task.Delay(2000);
-                        App.AlertSvc.ShowConfirmation("Authenticated!", "Access granted", (result =>
-                        {
-                            App.AlertSvc.ShowAlert("Result", $"{result}");
-                        }));
+                        App.AlertSvc.ShowAlert("Authenticated!", "Access granted", "OK");
+                        //App.AlertSvc.ShowConfirmation("Authenticated!", "Access granted", (result =>
+                        //{
+                        //    App.AlertSvc.ShowAlert("Result", $"{result}");
+                        //}));
                     });
                     //await DisplayAlert("Authenticated!", "Access granted", "OK");
                 }
@@ -57,14 +58,19 @@ namespace FingerPrint.InyectionDependency.Models
                     Task.Run(async () =>
                     {
                         await Task.Delay(2000);
-                        App.AlertSvc.ShowConfirmation("Not Authenticated", "Access denied", (result =>
-                        {
-                            App.AlertSvc.ShowAlert("Result", $"{result}");
-                        }));
+                        App.AlertSvc.ShowAlert("Not Authenticated", "Access denied", "OK");
+                        //App.AlertSvc.ShowConfirmation("Not Authenticated", "Access denied", (result =>
+                        //{
+                        //    App.AlertSvc.ShowAlert("Result", $"{result}");
+                        //}));
                     });
                     //await DisplayAlert("Not authenticated!", "Access denied", "OK");
                 }
             }
+        }
+
+        async Task ValidateFingerDevice()
+        {
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
